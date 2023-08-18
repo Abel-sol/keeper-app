@@ -10,3 +10,5 @@ function CreateNote(){
     </form>
   </div>)
 }
+
+export default CreateNote;
