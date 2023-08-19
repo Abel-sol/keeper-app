@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-function CreateNote(props){
-  const [note ,setNote] = useState({
+function CreateNote( props ){
+  const [ note ,setNote ] = useState( {
      title : "",
      content : ""
-    });
+    } );
   
-  function handleChange(event){
-    const {name, value} = event.target;
-    setNote( prevNote =>{
+  function handleChange( event ) {
+    const { name, value } = event.target;
+    setNote( prevNote => {
       return {
         ...prevNote,
-        [name] : value
+        [ name ] : value
       };
     });
   }
@@ -21,16 +21,16 @@ function CreateNote(props){
     setNote( {
       title : "",
       content : "" });
-    event.preventDefault();
+    event.preventDefault( );
   }
-  return (<div>
+  return ( <div>
     <form>
-      <input  onChange={handleChange} name="title" placeholder="Title" value={note.title}/>
-      <textarea name="content" onChange={handleChange} value={note.content}  placeholder="Take a note..." rows="3" />
+      <input  onChange={ handleChange } name="title" placeholder="Title" value={ note.title }/>
+      <textarea name="content" onChange={ handleChange } value={ note.content }  placeholder="Take a note..." rows="3" />
 
-      <button onClick={sendNoteToApp}> add </button>
+      <button onClick={ sendNoteToApp }> add </button>
     </form>
-  </div>)
+  </div> )
 }
 
 export default CreateNote;
