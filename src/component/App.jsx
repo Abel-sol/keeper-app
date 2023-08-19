@@ -12,6 +12,14 @@ function App(){
   function addNote(inputNote){
     setNote( prevNote =>{
       return [...prevNote, inputNote];
+    });
+  }
+
+  function deleteNote(id){
+    setNote( prevNote =>{
+      prevNote.filter( (noteitem, index )=>{
+        return index !== id;
+      })
     })
   }
 
@@ -24,6 +32,7 @@ function App(){
      id = {index}
      title = {inNote.title} 
      content = {inNote.content}
+     delete = {deleteNote}
      />)
   )} <Footer /></div>
 }
