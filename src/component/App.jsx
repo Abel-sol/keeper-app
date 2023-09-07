@@ -1,8 +1,8 @@
-import React, { useState }  from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Note from "./Notes";
+import React, { useState } from "react";
 import CreateNote from "../component/CreateNote";
+import Footer from "./Footer";
+import Header from "./Header";
+import Note from "./Notes";
 
 function App(){
 

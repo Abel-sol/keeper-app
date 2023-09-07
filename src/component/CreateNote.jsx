@@ -1,3 +1,4 @@
+import AddIcon from '@mui/icons-material/Add';
 import React, { useState } from "react";
 
 function CreateNote( props ){
@@ -24,11 +25,11 @@ function CreateNote( props ){
     event.preventDefault( );
   }
   return ( <div>
-    <form>
+    <form className="create-note">
       <input  onChange={ handleChange } name="title" placeholder="Title" value={ note.title }/>
       <textarea name="content" onChange={ handleChange } value={ note.content }  placeholder="Take a note..." rows="3" />
 
-      <button onClick={ sendNoteToApp }> add </button>
+      <button onClick={ sendNoteToApp } className="add-btn"> <AddIcon/> </button>
     </form>
   </div> )
 }
