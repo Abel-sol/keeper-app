@@ -1,4 +1,5 @@
 import AddIcon from '@mui/icons-material/Add';
+import { Fab, Zoom } from '@mui/material';
 import React, { useState } from "react";
 
 function CreateNote( props ){
@@ -6,6 +7,7 @@ function CreateNote( props ){
      title : "",
      content : ""
     } );
+ const [zoomIn, setZoomIn] = useState(false);
   
   function handleChange( event ) {
     const { name, value } = event.target;
@@ -26,10 +28,13 @@ function CreateNote( props ){
   }
   return ( <div>
     <form className="create-note">
-      <input  onChange={ handleChange } name="title" placeholder="Title" value={ note.title }/>
-      <textarea name="content" onChange={ handleChange } value={ note.content }  placeholder="Take a note..." rows="3" />
-
-      <button onClick={ sendNoteToApp } className="add-btn"> <AddIcon/> </button>
+      {zoomIn && <input  onChange={ handleChange } name="title" placeholder="Title" value={ note.title }/>}
+      <textarea name="content" onClick={()=>setZoomIn(true)} onChange={ handleChange } value={ note.content }  placeholder="Take a note..." rows={zoomIn? "3": "0"} />
+      <Zoom in={zoomIn}>
+      <Fab onClick={ sendNoteToApp } className="add-btn">
+        <AddIcon/>
+       </Fab>
+      </Zoom>
     </form>
   </div> )
 }
