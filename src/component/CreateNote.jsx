@@ -28,9 +28,9 @@ function CreateNote( props ){
   }
   return ( <div>
     <form className="create-note">
-      {zoomIn && <input  onChange={ handleChange } name="title" placeholder="Title" value={ note.title }/>}
+      {zoomIn && <input  onChange = { handleChange } name = "title" placeholder = "Title" value = { note.title }/>}
       <textarea name="content" onClick={()=>setZoomIn(true)} onChange={ handleChange } value={ note.content }  placeholder="Take a note..." rows={zoomIn? "3": "0"} />
-      <Zoom in={zoomIn}>
+      <Zoom in={ zoomIn }>
       <Fab onClick={ sendNoteToApp } className="add-btn">
         <AddIcon/>
        </Fab>
