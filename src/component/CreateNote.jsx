@@ -7,7 +7,7 @@ function CreateNote( props ){
      title : "",
      content : ""
     } );
- const [zoomIn, setZoomIn] = useState(false);
+ const [zoomIn, setZoomIn] = useState( false );
   
   function handleChange( event ) {
     const { name, value } = event.target;
@@ -23,17 +23,31 @@ function CreateNote( props ){
     props.add( note );
     setNote( {
       title : "",
-      content : "" });
+      content : "" } );
     event.preventDefault( );
   }
   return ( <div>
     <form className="create-note">
-      {zoomIn && <input  onChange = { handleChange } name = "title" placeholder = "Title" value = { note.title }/>}
-      <textarea name="content" onClick={()=>setZoomIn(true)} onChange={ handleChange } value={ note.content }  placeholder="Take a note..." rows={zoomIn? "3": "0"} />
+      { zoomIn && (
+        <input 
+         onChange = { handleChange } 
+         name = "title" 
+         placeholder = "Title" 
+         value = { note.title }/>
+        ) }
+      <textarea 
+        name="content"
+        onClick={()=>setZoomIn(true)}
+        onChange={ handleChange }
+        value={ note.content }
+        placeholder="Take a note..."
+        rows={zoomIn? "3": "0"} />
       <Zoom in={ zoomIn }>
+
       <Fab onClick={ sendNoteToApp } className="add-btn">
-        <AddIcon/>
+        <AddIcon />
        </Fab>
+
       </Zoom>
     </form>
   </div> )
