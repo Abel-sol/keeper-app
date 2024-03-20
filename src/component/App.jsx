@@ -26,14 +26,15 @@ function App(){
       <Header /> 
       <CreateNote  add = {addNote}/>
       {notes.map( ( inNote, index ) => (
-      <Note
-      key = { index }
-      id = { index }
-      title = { inNote.title } 
-      content = { inNote.content }
-      delete = { deleteNote }
-      />)
-    )} <Footer />
+        <Note
+        key = { index }
+        id = { index }
+        title = { inNote.title } 
+        content = { inNote.content }
+        delete = { deleteNote }
+        />)
+      )} 
+    <Footer />
   </div>
 }
 
